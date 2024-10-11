@@ -19,6 +19,8 @@
             <asp:HyperLink ID="LnkListadoSucursalesSeleccionadas" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado Sucursales Seleccionadas</asp:HyperLink>
         </p>
         <div>
+            <br />
+            <asp:HyperLink ID="LnkAgregar" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
         </div>
     </form>
 </body>
