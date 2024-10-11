@@ -11,7 +11,7 @@ namespace SeleccionarSucursales
 {
 
 
-    public partial class ListadoSucursales
+    public partial class SeleccionarSucursales
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace SeleccionarSucursales
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control ListView1.
+        /// Control LnkSeleccionSucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListView1;
+        protected global::System.Web.UI.WebControls.HyperLink LnkSeleccionSucursales;
 
         /// <summary>
-        /// Control SqlDataSource1.
+        /// Control LnkListadoSucursalesSeleccionadas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.HyperLink LnkListadoSucursalesSeleccionadas;
     }
 }

@@ -7,14 +7,9 @@ using System.Web.UI.WebControls;
 
 namespace SeleccionarSucursales
 {
-    public partial class ListadoSucursales : System.Web.UI.Page
+    public partial class SeleccionarSucursales : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
         {
 
         }

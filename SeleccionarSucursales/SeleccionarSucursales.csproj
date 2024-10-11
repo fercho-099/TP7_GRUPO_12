@@ -80,21 +80,12 @@
     <Content Include="Imagenes\7.jpg" />
     <Content Include="Imagenes\8.jpg" />
     <Content Include="Imagenes\9.jpg" />
-    <Content Include="ListadoSucursales.aspx" />
     <Content Include="SeleccionarSucursales.aspx" />
-    <Content Include="SeleccionSucursales.aspx" />
+    <Content Include="ListadoSucursalesSeleccionados.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
-    <Compile Include="ListadoSucursales.aspx.cs">
-      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListadoSucursales.aspx.designer.cs">
-      <DependentUpon>ListadoSucursales.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleccionarSucursales.aspx.cs">
       <DependentUpon>SeleccionarSucursales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,12 +93,13 @@
     <Compile Include="SeleccionarSucursales.aspx.designer.cs">
       <DependentUpon>SeleccionarSucursales.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SeleccionSucursales.aspx.cs">
-      <DependentUpon>SeleccionSucursales.aspx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ListadoSucursalesSeleccionados.aspx.cs">
+      <DependentUpon>ListadoSucursalesSeleccionados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SeleccionSucursales.aspx.designer.cs">
-      <DependentUpon>SeleccionSucursales.aspx</DependentUpon>
+    <Compile Include="ListadoSucursalesSeleccionados.aspx.designer.cs">
+      <DependentUpon>ListadoSucursalesSeleccionados.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
