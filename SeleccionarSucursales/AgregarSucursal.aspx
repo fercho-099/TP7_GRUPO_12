@@ -26,8 +26,10 @@
             <br />
             <asp:Label ID="LbProvincia" runat="server" Text="Seleccione la Provincia"></asp:Label>
 &nbsp;&nbsp;&nbsp;
-&nbsp;<asp:DropDownList ID="DdlProvincias" runat="server" DataSourceID="SqlDataSource1" DataTextField="DescripcionProvincia" DataValueField="DescripcionProvincia">
+&nbsp;<asp:DropDownList ID="DdlProvincias" runat="server" DataSourceID="SqlDataSource1" DataTextField="DescripcionProvincia" DataValueField="Id_Provincia">
+                <asp:ListItem>Buenos Aires</asp:ListItem>
             </asp:DropDownList>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             <asp:Label ID="LbUrlImagen" runat="server" Text="URL Imagen"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

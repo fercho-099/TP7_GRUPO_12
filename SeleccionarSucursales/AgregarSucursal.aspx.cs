@@ -19,10 +19,15 @@ namespace SeleccionarSucursales
             sucursalAgregada datos = new sucursalAgregada();
             string nombre = TxtNombre.Text;
             string descripcion = TxtDescripcion.Text;
-            string idprovincia =  DdlProvincias.SelectedValue;/* como se sabe cual se selecciona*/
-            int IdProv = int.Parse(DdlProvincias.SelectedValue);
+            int IdProv = Convert.ToInt32(DdlProvincias.SelectedValue);
             string url = "~/Imagenes/" + Tximagen.Text + ".jpg";
             datos.Agregarsucursal(nombre, descripcion, IdProv, url);
         }
+
+      
+        /*protected void DdlProvincias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedProvincia= Convert.ToInt32(DdlProvincias.SelectedValue);
+        }*/
     }
 }

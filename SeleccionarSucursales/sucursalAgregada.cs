@@ -23,7 +23,7 @@ namespace SeleccionarSucursales
                         INSERT [dbo].[Sucursal] (NombreSucursal, DescripcionSucursal,
                         Id_ProvinciaSucursal, URL_Imagen_Sucursal)
                         VALUES (@NombreSucursal, @DescripcionSucursal, @ID_ProvinciaSucursal, @URL_Imagen_Sucursal)";
-                    /* hay que ver ese values si esta bien*/
+                   
                     using (SqlCommand cmd = new SqlCommand(consulta, conexion))
                     {
                         
@@ -42,10 +42,7 @@ namespace SeleccionarSucursales
             }
             finally
             {
-                if (conexion != null)
-                {
-                    conexion.Close();
-                }
+               conexion.Close();                
             }
         }
     }
