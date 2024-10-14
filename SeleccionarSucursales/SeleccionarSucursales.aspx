@@ -50,7 +50,7 @@
                                     </asp:DataList>
                                 </td>
                                 <td>
-            <asp:ListView ID="ListView1" runat="server" DataKeyNames="Id_Sucursal" DataSourceID="SqlDataSource1" GroupItemCount="3">
+            <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
                 <AlternatingItemTemplate>
                     <td runat="server" style="background-color:#FFF8DC;">
                         <asp:Label ID="NombreSucursalLabel" runat="server" Text='<%# Eval("NombreSucursal") %>' />
@@ -59,7 +59,7 @@
                         <br />
                         <asp:Label ID="DescripcionSucursalLabel" runat="server" Text='<%# Eval("DescripcionSucursal") %>'></asp:Label>
                         <br />
-                        <asp:Button ID="BtnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# ("Id_Sucursal")+ ";"+Eval("NombreSucursal")+";"+Eval("DescripcionSucursal") %>' />
+                        <asp:Button ID="BtnSeleccionar" runat="server" Text="Seleccionar" CommandArgument='<%# Eval ("Id_Sucursal")+ ";"+Eval("NombreSucursal")+";"+Eval("DescripcionSucursal") %>' OnCommand="BtnSeleccionar_Command" />
                         <br />
                         </td>
                 </AlternatingItemTemplate>
@@ -114,7 +114,7 @@
                         <br />
                         <asp:Label ID="DescripcionSucursalLabel0" runat="server" Text='<%# Eval("DescripcionSucursal") %>'></asp:Label>
                         <br />
-                        <asp:Button ID="BtnSeleccionar0" runat="server" Text="Seleccionar" CommandArgument='<%# ("Id_Sucursal")+ ";"+Eval("NombreSucursal")+";"+Eval("DescripcionSucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command1" />
+                        <asp:Button ID="BtnSeleccionar0" runat="server" Text="Seleccionar" CommandArgument='<%# Eval("Id_Sucursal")+ ";"+Eval("NombreSucursal")+";"+Eval("DescripcionSucursal") %>' CommandName="eventoSeleccionar" OnCommand="BtnSeleccionar_Command1" />
                         <br /></td>
                 </ItemTemplate>
                 <LayoutTemplate>

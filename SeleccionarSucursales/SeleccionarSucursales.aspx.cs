@@ -37,7 +37,7 @@ namespace SeleccionarSucursales
 
         public class DatosSucursal
         {
-             public string IdSucursal {get; set;}
+            public string IdSucursal {get; set;}
             public string NombreSucursal {get; set;}
             public string DescripcionSucursal {get; set;}
         }
@@ -53,6 +53,25 @@ namespace SeleccionarSucursales
                 SqlDataSource1.SelectParameters.Add("IdProvincia", id_provinciaseleccionada.ToString());
                 ListView1.DataBind();
             }
+        }
+
+        protected void BtnSeleccionar_Command(object sender, CommandEventArgs e)
+        {
+            string[] argumentos = e.CommandArgument.ToString().Split(';');
+            string idsucursal = argumentos[0];
+            string nombresucursal = argumentos[1];
+            string descripcionsucursal = argumentos[2];
+
+            var seleccion = new DatosSucursal
+            {
+                IdSucursal = idsucursal,
+                NombreSucursal = nombresucursal,
+                DescripcionSucursal = descripcionsucursal
+            };
+
+            var seleccionados = Session["Selecciones"] as List<DatosSucursal> ?? new List<DatosSucursal>();
+            seleccionados.Add(seleccion);
+            Session["Selecciones"] = seleccionados;
         }
     }
 }

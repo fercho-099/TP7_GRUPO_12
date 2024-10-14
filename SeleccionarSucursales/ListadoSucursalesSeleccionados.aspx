@@ -8,8 +8,6 @@
     <title></title>
 </head>
 <body>
-    <p>
-        TP7_GRUPO_12</p>
     <form id="form1" runat="server">
         <p>
             <asp:HyperLink ID="LnkSeleccionSucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Seleccion Sucursales</asp:HyperLink>
@@ -21,8 +19,16 @@
         <div>
             <asp:Label ID="lbl_mostrarsucursalesseleccionadas" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Mostrar sucursales seleccionadas"></asp:Label>
             <br />
+            <br />
         </div>
-        <asp:Label ID="lbl_tabla" runat="server"></asp:Label>
+
+        <asp:GridView ID="gvMostrar" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:BoundField DataField="IdSucursal" HeaderText="ID Sucursal" />
+                <asp:BoundField DataField="NombreSucursal" HeaderText="Nombre Sucursal" />
+                <asp:BoundField DataField="DescripcionSucursal" HeaderText="Descripción" />
+            </Columns>
+        </asp:GridView>
     </form>
 </body>
 </html>

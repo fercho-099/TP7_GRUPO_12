@@ -60,12 +60,12 @@ namespace SeleccionarSucursales
         protected global::System.Web.UI.WebControls.Label lbl_mostrarsucursalesseleccionadas;
 
         /// <summary>
-        /// Control lbl_tabla.
+        /// Control gvMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_tabla;
+        protected global::System.Web.UI.WebControls.GridView gvMostrar;
     }
 }
