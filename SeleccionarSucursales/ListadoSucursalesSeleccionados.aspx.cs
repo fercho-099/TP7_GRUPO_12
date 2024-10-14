@@ -20,9 +20,9 @@ namespace SeleccionarSucursales
 
         public void CargarSeleccionados()
         {
-            var seleccionados = Session["Selecciones"] as List<DatosSucursal>;
+            var seleccionados = Session["Selecciones"] as List<DatosSucursal> ?? new List<DatosSucursal>();
 
-            if (seleccionados != null && seleccionados.Count > 0)
+            if (seleccionados.Count > 0)
             {
                 gvMostrar.DataSource = seleccionados;
                 gvMostrar.DataBind();

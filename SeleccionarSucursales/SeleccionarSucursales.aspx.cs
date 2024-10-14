@@ -18,6 +18,9 @@ namespace SeleccionarSucursales
         protected void BtnSeleccionar_Command1(object sender, CommandEventArgs e)
         {
             string [] argumentos = e.CommandArgument.ToString().Split(';');
+            if (argumentos.Length != 3) return;
+
+
             string idsucursal = argumentos[0];
             string nombresucursal = argumentos[1];
             string descripcionsucursal = argumentos[2];
@@ -29,9 +32,16 @@ namespace SeleccionarSucursales
                 DescripcionSucursal = descripcionsucursal
             };
 
-            var seleccionados = Session["Selecciones"] as List<DatosSucursal> ?? new List<DatosSucursal>();
-            seleccionados.Add(seleccion);
-            Session["Selecciones"] = seleccionados;
+
+            var seleccionados = this.ObtenerSeleccionadosDeSesion();
+
+            if (!seleccionados.Exists(s => s.IdSucursal == idsucursal))
+            {
+                seleccionados.Add(seleccion);
+                this.GuardarSeleccionadosEnSesion(seleccionados);
+            }
+
+
         }
 
 
@@ -73,5 +83,18 @@ namespace SeleccionarSucursales
             seleccionados.Add(seleccion);
             Session["Selecciones"] = seleccionados;
         }
+
+
+        //HELPERS
+        private List<DatosSucursal> ObtenerSeleccionadosDeSesion()
+        {
+            return Session["Selecciones"] as List<DatosSucursal> ?? new List<DatosSucursal>();
+        }
+
+        private void GuardarSeleccionadosEnSesion(List<DatosSucursal> seleccionados)
+        {
+            Session["Selecciones"] = seleccionados;
+        }
+
     }
 }

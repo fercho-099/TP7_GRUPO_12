@@ -6,19 +6,26 @@ using System.Web;
 
 namespace SeleccionarSucursales
 {
-    public class AccesoDatos
+    public class AccesoDatos : IDisposable
     {
-        String rutaDBProductos = "Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";
-        public AccesoDatos() { }
+        private string rutaDBProductos = "Data Source=localhost\\sqlexpress;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";
+        private SqlConnection _connection;
+        public AccesoDatos()
+        {
+            _connection = new SqlConnection(rutaDBProductos);
+        }
 
         public SqlConnection ObtenerConexion()
         {
-            SqlConnection cn = new SqlConnection(rutaDBProductos);
 
             try
             {
-                cn.Open();
-                return cn;
+                if (_connection.State == System.Data.ConnectionState.Closed)
+                {
+                    _connection.Open();
+                }
+
+                return _connection;
             }
             catch (Exception ex)
             {
@@ -29,11 +36,9 @@ namespace SeleccionarSucursales
 
         public SqlDataAdapter ObtenerAdaptador(String consultaSql)
         {
-            SqlDataAdapter adaptador;
             try
             {
-                adaptador = new SqlDataAdapter(consultaSql, ObtenerConexion());
-                return adaptador;
+                return new SqlDataAdapter(consultaSql, ObtenerConexion());
             }
             catch (Exception ex)
             {
@@ -41,5 +46,33 @@ namespace SeleccionarSucursales
 
             }
         }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                if (_connection != null)
+                {
+                    if (_connection.State != System.Data.ConnectionState.Closed)
+                    {
+                        _connection.Close();
+                    }
+                    _connection.Dispose();
+                    _connection = null;
+                }
+            }
+        }
+
+        ~AccesoDatos()
+        {
+            Dispose(false);
+        }
     }
 }
+
