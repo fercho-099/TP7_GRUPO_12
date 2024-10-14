@@ -41,5 +41,18 @@ namespace SeleccionarSucursales
             public string NombreSucursal {get; set;}
             public string DescripcionSucursal {get; set;}
         }
+
+        protected void DataListProvincias_ItemCommand(object source, DataListCommandEventArgs e)
+        {
+            if (e.CommandName == "Seleccionar_provincia")
+            {
+                int id_provinciaseleccionada = Convert.ToInt32(e.CommandArgument);
+
+                SqlDataSource1.SelectCommand = "SELECT * FROM Sucursal s inner join Provincia p  on s.Id_ProvinciaSucursal = p.Id_Provincia  WHERE p.Id_Provincia = @IdProvincia";
+                SqlDataSource1.SelectParameters.Clear();
+                SqlDataSource1.SelectParameters.Add("IdProvincia", id_provinciaseleccionada.ToString());
+                ListView1.DataBind();
+            }
+        }
     }
 }

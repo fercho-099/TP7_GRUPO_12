@@ -21,7 +21,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
+                        <asp:HyperLink ID="hl_listadosucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Listado de sucursales</asp:HyperLink>
                     </td>
                     <td>
                         <asp:HyperLink ID="hl_mostrarsucursales0" runat="server" NavigateUrl="~/ListadoSucursalesSeleccionados.aspx">Mostrar sucursales seleccionadas</asp:HyperLink>
@@ -43,9 +43,9 @@
                         <table class="auto-style1">
                             <tr>
                                 <td>
-                                    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2">
+                                    <asp:DataList ID="DataListProvincias" runat="server" DataSourceID="SqlDataSource2" OnItemCommand="DataListProvincias_ItemCommand">
                                         <ItemTemplate>
-                                            <asp:Button ID="Button1" runat="server" Text='<%# bind("DescripcionProvincia") %>' />
+                                            <asp:Button ID="Button1" runat="server" Text='<%# bind("DescripcionProvincia") %>' CommandArgument='<%# Eval ("Id_Provincia") %>' CommandName="Seleccionar_provincia" />
                                         </ItemTemplate>
                                     </asp:DataList>
                                 </td>

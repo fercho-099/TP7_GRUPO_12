@@ -24,13 +24,13 @@ namespace SeleccionarSucursales
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control HyperLink1.
+        /// Control hl_listadosucursales.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink1;
+        protected global::System.Web.UI.WebControls.HyperLink hl_listadosucursales;
 
         /// <summary>
         /// Control hl_mostrarsucursales0.
@@ -78,13 +78,13 @@ namespace SeleccionarSucursales
         protected global::System.Web.UI.WebControls.Button btn_buscar;
 
         /// <summary>
-        /// Control DataList1.
+        /// Control DataListProvincias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataList1;
+        protected global::System.Web.UI.WebControls.DataList DataListProvincias;
 
         /// <summary>
         /// Control ListView1.

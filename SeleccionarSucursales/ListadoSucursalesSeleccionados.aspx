@@ -10,18 +10,19 @@
 <body>
     <p>
         TP7_GRUPO_12</p>
-    <p>
-        &nbsp;</p>
     <form id="form1" runat="server">
         <p>
-            <asp:HyperLink ID="LnkSeleccionSucursales" runat="server" NavigateUrl="~/SeleccionSucursales.aspx">Seleccion Sucursales</asp:HyperLink>
+            <asp:HyperLink ID="LnkSeleccionSucursales" runat="server" NavigateUrl="~/SeleccionarSucursales.aspx">Seleccion Sucursales</asp:HyperLink>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:HyperLink ID="LnkListadoSucursalesSeleccionadas" runat="server" NavigateUrl="~/ListadoSucursales.aspx">Listado Sucursales Seleccionadas</asp:HyperLink>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="LnkAgregar" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
         </p>
         <div>
+            <asp:Label ID="lbl_mostrarsucursalesseleccionadas" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Mostrar sucursales seleccionadas"></asp:Label>
             <br />
-            <asp:HyperLink ID="LnkAgregar" runat="server" NavigateUrl="~/AgregarSucursal.aspx">Agregar Sucursal</asp:HyperLink>
         </div>
+        <asp:Label ID="lbl_tabla" runat="server"></asp:Label>
     </form>
 </body>
 </html>
